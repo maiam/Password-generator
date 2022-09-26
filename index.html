@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="l-body">
+    <header class="l-header">
+        <div class="logo">
+            <img src="/img/memory-solid.svg" alt="logo">
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="#">início</a></li>
+                <li><a href="#">sobre</a></li>
+            </ul>
+        </div>
+        <hr>
+    </header>
+
+    <main class="l-main">
+        <h2>Password Generator</h2>
+        <div class="input-password">
+            <input type="text" readonly> 
+            <img src="/img/copy-regular.svg" alt="icon copy">
+            <img src="/img/rotate-solid.svg" alt="icon rotate">
+        </div>
+        <p>Use o botão de atualizar acima para gerar uma nova senha.</p>
+        <p>A senha deve ter entre 3 e 16 caracteres</p>
+        <div class="password-lenght">            
+            <h3>Tamanho da senha</h3>
+            <input type="text" name="password-lenght" id="input-password-lenght">
+        </div>
+        <div class="password-types">
+            <h3>Caracteres utilizados:</h3>
+            <div class="types">
+                <input type="text" name="password-type-ABC" id="password-type-ABC" class="password-type">
+                <label for="password-type-">ABC</label>
+                <input type="text" name="password-type-abc" id="password-type-abc" class="password-type">
+                <label for="password-type-">abc</label>
+                <input type="text" name="password-type-123" id="password-type-123" class="password-type">
+                <label for="password-type-">123</label>
+                <input type="text" name="password-type-#$&" id="password-type-#$&" class="password-type">
+                <label for="password-type-">#$&</label>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="l-footer">
+        <p><a href="#">Políticas de Privacidade</a></p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
