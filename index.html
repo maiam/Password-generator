@@ -13,9 +13,9 @@
 </head>
 <body class="l-body">
     <header class="l-header">
-        <div class="logo">
-            <img src="/img/memory-solid.svg" alt="logo">
-        </div>
+        <div class="logo-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 64C28.7 64 0 92.7 0 128v7.4c0 6.8 4.4 12.6 10.1 16.3C23.3 160.3 32 175.1 32 192s-8.7 31.7-21.9 40.3C4.4 236 0 241.8 0 248.6V320H576V248.6c0-6.8-4.4-12.6-10.1-16.3C552.7 223.7 544 208.9 544 192s8.7-31.7 21.9-40.3c5.7-3.7 10.1-9.5 10.1-16.3V128c0-35.3-28.7-64-64-64H64zM576 352H0v64c0 17.7 14.3 32 32 32H80V416c0-8.8 7.2-16 16-16s16 7.2 16 16v32h96V416c0-8.8 7.2-16 16-16s16 7.2 16 16v32h96V416c0-8.8 7.2-16 16-16s16 7.2 16 16v32h96V416c0-8.8 7.2-16 16-16s16 7.2 16 16v32h48c17.7 0 32-14.3 32-32V352zM192 160v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V160c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V160c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0v64c0 17.7-14.3 32-32 32s-32-14.3-32-32V160c0-17.7 14.3-32 32-32s32 14.3 32 32z"/></svg>
+        </div>            
         <div class="nav">
             <ul>
                 <li><a href="#">início</a></li>
@@ -26,32 +26,54 @@
     </header>
 
     <main class="l-main">
-        <h2>Password Generator</h2>
-        <div class="input-password">
-            <input type="text" readonly> 
-            <img src="/img/copy-regular.svg" alt="icon copy">
-            <img src="/img/rotate-solid.svg" alt="icon rotate">
-        </div>
-        <p>Use o botão de atualizar acima para gerar uma nova senha.</p>
-        <p>A senha deve ter entre 3 e 16 caracteres</p>
-        <div class="password-lenght">            
-            <h3>Tamanho da senha</h3>
-            <input type="text" name="password-lenght" id="input-password-lenght">
-        </div>
-        <div class="password-types">
-            <h3>Caracteres utilizados:</h3>
-            <div class="types">
-                <input type="text" name="password-type-ABC" id="password-type-ABC" class="password-type">
-                <label for="password-type-">ABC</label>
-                <input type="text" name="password-type-abc" id="password-type-abc" class="password-type">
-                <label for="password-type-">abc</label>
-                <input type="text" name="password-type-123" id="password-type-123" class="password-type">
-                <label for="password-type-">123</label>
-                <input type="text" name="password-type-#$&" id="password-type-#$&" class="password-type">
-                <label for="password-type-">#$&</label>
+
+        <section class="left-section">
+
+        </section>
+        <section class="right-section">
+            <div class="container">
+                <h2>Password Generator</h2>
+                <div class="input-container">
+                    <input type="text" value="98hy436%d@" readonly> 
+                    <button class="btn-copy"><i class="fa-regular fa-copy"></i></button>
+                    <button class="btn-rotate-right"><i class="fa-solid fa-rotate-right"></i></button>
+                </div>
+                <div class="text-container">
+                    <p>Use o botão de atualizar acima para gerar uma nova senha.</p>
+                    <p class="alert">A senha deve ter entre 3 e 16 caracteres</p>
+                </div>
             </div>
-            
-        </div>
+        
+            <div class="container">            
+                <h3>Tamanho da senha:</h3>
+                <input type="text" name="password-lenght" id="input-password-lenght" class="input-container input-container-sm" maxlength="2">
+            </div>
+
+            <div class="container">
+                    <h3>Caracteres utilizados:</h3>
+                    <div class="types-container">
+                        
+                        <label for="password-type-ABC" class="container-label">
+                            <input type="checkbox" name="password-type-ABC" id="password-type-ABC" class="">
+                        <span class="input-checkbox"></span>ABC</label>
+
+                        <label for="password-type-abc" class="container-label">
+                            <input type="checkbox" name="password-type-abc" id="password-type-abc" class="password-type input-checkbox">
+                            <span class="input-checkbox"></span>    
+                            abc</label>
+
+                            <label for="password-type-123" class="container-label">
+                                <input type="checkbox" name="password-type-123" id="password-type-123" class="password-type input-checkbox">
+                                <span class="input-checkbox"></span>
+                                123</label>
+                        
+                                <label for="password-type-#$&" class="container-label">
+                                    <input type="checkbox" name="password-type-#$&" id="password-type-#$&" class="password-type input-checkbox">
+                                    <span class="input-checkbox"></span>            
+                                    #$&</label>
+                    </div>
+            </div>
+        </section>
     </main>
 
     <footer class="l-footer">
