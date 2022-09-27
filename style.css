@@ -156,6 +156,13 @@ body {
     transition: transform 0.325s ease-in-out;
 }
 
+.btn-rotate-right:active i,
+.btn-rotate-right:link i
+{
+    transform: rotate(360deg);
+    transition: transform 0.625s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 
 .text-container {
     font-size: 0.8rem;
