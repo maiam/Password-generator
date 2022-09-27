@@ -9,6 +9,7 @@
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Css -->
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="l-body">
@@ -34,13 +35,13 @@
             <div class="container">
                 <h2 tabindex="4">Password Generator</h2>
                 <div class="input-container">
-                    <input type="text" value="98hy436%d@" readonly tabindex="6"> 
+                    <input type="text" value="98hy436%d@" id="input-password" readonly tabindex="6" maxlength="16"> 
                     <button class="btn-copy" tabindex="5"><i class="fa-regular fa-copy"></i></button>
                     <button class="btn-rotate-right" tabindex="7"><i class="fa-solid fa-rotate-right"></i></button>
                 </div>
                 <div class="text-container">
                     <p tabindex="8">Use o botão de atualizar acima para gerar uma nova senha.</p>
-                    <p class="alert" tabindex="9">A senha deve ter entre 3 e 16 caracteres</p>
+                    <p class="alert visibility" tabindex="9">A senha deve ter entre 3 e 16 caracteres</p>
                 </div>
             </div>
         
