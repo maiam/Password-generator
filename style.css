@@ -172,10 +172,10 @@ body {
 }
 
 .input-container-sm {
-    width: 41px;
-    height: 41px;
+    width: 35px;
+    height: 35px;
 
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     margin: 0 0 1rem 0;
 }
 
