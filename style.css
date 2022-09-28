@@ -74,6 +74,7 @@ body {
     color: var(--primary-color);
 }
 
+
 .container {
     display: flex;
     flex-direction: column;
@@ -112,7 +113,7 @@ body {
 
     margin: 0;
     box-sizing: border-box;
-    width: 200px;
+    width: 220px;
 
     font-size: 1.2rem;
     border-radius: 5px;
@@ -139,7 +140,7 @@ body {
     position: absolute;
     width: 30px;
     height: 28px;
-    left: 8px;
+    left: 12px;
     top: 12px;
 }
 
@@ -147,22 +148,23 @@ body {
     position: absolute;
     width: 30px;
     height: 28px;
-    right: 8px;
+    right: 12px;
     top: 12px;
+    
+}
+
+.btn-rotate-right i {
+    transition: transform 0.3s ease-out;
 }
 
 .btn-copy:active i{
     transform: scale(0.90);
-    transition: transform 0.325s ease-in-out;
+    transition: transform 0.325s ease-in-out 0.2s;
 }
 
-.btn-rotate-right:active i,
-.btn-rotate-right:link i
-{
-    transform: rotate(360deg);
-    transition: transform 0.625s cubic-bezier(0.075, 0.82, 0.165, 1);
+.btn-rotate-right:active i {
+    transform: rotate(360deg);   
 }
-
 
 .text-container {
     font-size: 0.8rem;
@@ -185,6 +187,15 @@ body {
     font-size: 0.8rem;
     margin: 0 0 1rem 0;
 }
+
+#select {
+    width: 40px;
+    padding: 0  2px;
+    font-size: 0.8rem;
+    font-weight: var(--ff-regular);
+    border-radius: 10px;
+}
+
 
 .container h3{
     padding: 0 0 0.5rem 0;

@@ -8,6 +8,9 @@
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- IziToast Css -->
+    <link rel="stylesheet" href="iziToast.min.css">
     <!-- Css -->
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
@@ -35,7 +38,7 @@
             <div class="container">
                 <h2 tabindex="4">Password Generator</h2>
                 <div class="input-container">
-                    <input type="text" value="98hy436%d@" id="input-password" readonly tabindex="6" maxlength="16"> 
+                    <input type="text" value="" id="input-password" readonly tabindex="6" maxlength="16"> 
                     <button class="btn-copy" tabindex="5"><i class="fa-regular fa-copy"></i></button>
                     <button class="btn-rotate-right" tabindex="7"><i class="fa-solid fa-rotate-right"></i></button>
                 </div>
@@ -45,9 +48,26 @@
                 </div>
             </div>
         
+            
             <div class="container">            
                 <h3 tabindex="10">Tamanho da senha:</h3>
-                <input type="text" name="password-lenght" id="input-password-lenght" class="input-container input-container-sm" maxlength="2" tabindex="11">
+                <select name="select" id="select" class="input-container input-container-sm" tabindex="11" data-select="03">
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                </select>
+                <!-- <input type="text" name="password-lenght" id="input-password-lenght" class="input-container input-container-sm" maxlength="2" tabindex="11"> -->
             </div>
 
             <div class="container">
@@ -82,5 +102,6 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="iziToast.min.js" type="text/javascript"></script>
 </body>
 </html>
