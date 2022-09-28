@@ -1,62 +1,77 @@
 const inputPasswordEl = document.getElementById('input-password');
-const objABC = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','W','Y','Z','1','2','3','4','5','6','7','8','9','0','!','@','#','$','%','&','*','(',')','-','+','/'];
-const alert = document.querySelector('.alert');
-const limiteMin = 3;
-const limiteMax = document.getElementById('select');
+const selectEl = document.getElementById('select');
 const refreshBtn = document.querySelector(".btn-rotate-right");
 const copyBtn = document.querySelector('.btn-copy');
+inputPasswordEl.value = "";
+const inputs = document.querySelectorAll('input');
 
 
 
-function ABC() {
-    // alert.classList.add('visibility');
-    
-    for (i=0; i < limiteMax.value; i++){
-        let newPassword = Math.floor(Math.random()*objABC.length);
-        inputPasswordEl.value = inputPasswordEl.value + objABC[newPassword];
-    };
+// EVENTO DE CLICK NO BOTAO REFRESH PARA CRIAÇÃO DE SENHA
+refreshBtn.addEventListener('click', ()=> {
+    createPassword();
+});
 
- 
+// EVENTO CLICK NO BOTAO COPY PARA COPIAR A SENHA PARA A AREA DE TRANSFERENCIA
+copyBtn.addEventListener('click', ()=>{
+    navigator.clipboard.writeText(inputPasswordEl.value);
+    iziToast.success({
+        title: 'Password copiado: ',
+        message: `${inputPasswordEl.value}`,
+        position: 'bottomRight'
+    });
+});
+
+
+selectEl.addEventListener('change', () => {
+    createPassword();
+})
+
+inputs.forEach(input =>{
+    input.addEventListener('click', () => {
+        if(input.id!='input-password'){
+            createPassword();
+        }
+    })
+})
+
+
+function newCharArray () {
+    let chars = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&*()-+={}[]^~.,;:";
+    let newChars = "";
+    let checkedArray = [];
+    inputs.forEach(input => {
+        
+        if(input.checked) {
+            checkedArray.push(input.id);
+        }
+    })
+
+    for(i=0; i < checkedArray.length; i++){
+        if(checkedArray[i]==='password-type-ABC')
+            newChars += chars.substring(36,62);
+        if(checkedArray[i]==='password-type-abc')
+            newChars += chars.substring(0,26);
+        if(checkedArray[i]==='password-type-123')
+            newChars += chars.substring(26,36);
+        if(checkedArray[i]==='password-type-#$&')
+            newChars += chars.substring(62,84);
+    }
+    return (newChars);
 }
 
 
-function changePassword() {
-   
-    limiteMax.value = "03";
-    // inputPasswordEl.value = "";
-   
-    copyBtn.addEventListener('click', ()=>{
-        navigator.clipboard.writeText(inputPasswordEl.value);
-        iziToast.success({
-            title: 'Password copiado: ',
-            message: `${inputPasswordEl.value}`,
-            position: 'bottomRight'
-        });
-    });
+function createPassword() {
+    inputPasswordEl.value = "";
+    
+    let chars = newCharArray();
+    let charsLength = selectEl.value;
+    let randomChar = 0;
+    for (i=0; i < selectEl.value; i++){
+        randomChar = Math.floor(Math.random()*chars.length);
+        inputPasswordEl.value = inputPasswordEl.value + chars.substring(randomChar,randomChar+1);
+    };
+    
 
-    refreshBtn.addEventListener('click', ()=> {
-        inputPasswordEl.value = "";
-
-        if(limiteMax.value < 3 || limiteMax.value >16 ) {
-            inputPasswordEl.value = "";
-            // alert.classList.remove('visibility');
-
-        } else {
-            for (i=0; i < limiteMax.value; i++){
-                let newPassword = Math.floor(Math.random()*objABC.length);
-                inputPasswordEl.value = inputPasswordEl.value + objABC[newPassword];
-            };
-        }
-        
-        
-    });
 };
-
-changePassword();
-
-
-
-
-
-
 
