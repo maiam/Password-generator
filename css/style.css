@@ -29,7 +29,7 @@ body {
     font-weight: var(--ff-regular);
 }
 
-
+/* HEADER */
 .logo-container {
     height: 72px;
     width: 100%;
@@ -46,6 +46,31 @@ body {
     top: 14px;
 
     fill: var(--primary-color);
+}
+
+/* HEADER NAV */
+
+.l-header {
+    position: relative;
+}
+
+.btn-bars {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    margin: 0;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn-open {
+
+}
+
+.btn-close {
+    
 }
 
 .nav ul {
