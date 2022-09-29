@@ -4,22 +4,52 @@ const refreshBtn = document.querySelector(".btn-rotate-right");
 const copyBtn = document.querySelector('.btn-copy');
 inputPasswordEl.value = "";
 const inputs = document.querySelectorAll('input');
+const btnBarsEl = document.querySelector('.btn-open');
+const btnXEl = document.querySelector('.btn-close');
+const navEl = document.querySelector('.nav');
 
 
+// EVENTO NAVBARS
+btnBarsEl.addEventListener('click', () => {
+    navEl.classList.remove('wrap');
+    btnXEl.classList.remove('visibility');
+    btnBarsEl.classList.add('visibility');
+})
+
+btnXEl.addEventListener('click', () => {
+    navEl.classList.add('wrap');
+    btnXEl.classList.add('visibility');
+    btnBarsEl.classList.remove('visibility');
+})
 
 // EVENTO DE CLICK NO BOTAO REFRESH PARA CRIAÇÃO DE SENHA
 refreshBtn.addEventListener('click', ()=> {
+    let charLength = newCharArray().length;
+    console.log(charLength);
+    if( charLength === 0){
+        iziToast.error({
+            title: 'Error!',
+            message: 'É preciso escolher ao menos uma combinação de caracteres.'
+        });
+    }
     createPassword();
 });
 
 // EVENTO CLICK NO BOTAO COPY PARA COPIAR A SENHA PARA A AREA DE TRANSFERENCIA
 copyBtn.addEventListener('click', ()=>{
-    navigator.clipboard.writeText(inputPasswordEl.value);
-    iziToast.success({
-        title: 'Password copiado: ',
-        message: `${inputPasswordEl.value}`,
-        position: 'bottomRight'
-    });
+    if(inputPasswordEl.value === ""){
+        iziToast.warning({
+            title: 'Alerta!',
+            message: 'Password em branco.'
+        });
+    } else {
+        navigator.clipboard.writeText(inputPasswordEl.value);
+        iziToast.success({
+            title: 'Password copiado: ',
+            message: `${inputPasswordEl.value}`,
+            position: 'bottomRight'
+        });
+    }
 });
 
 

@@ -31,46 +31,72 @@ body {
 
 /* HEADER */
 .logo-container {
-    height: 72px;
+    height: 58px;
     width: 100%;
-    position: relative;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* position: relative; */
 }
 
 .logo-container svg {
     width: 50px;
     height: 44px;
-
-    position: absolute;
-    left: 22px;
-    top: 14px;
-
+    margin: 0 1rem;
     fill: var(--primary-color);
+}
+
+.btn-bars {
+    display: none;
+}
+
+@media screen and (max-width: 400px) { 
+
+    .btn-bars {
+        width: auto;
+        height: auto;
+        display: block;
+        margin: 0 1rem;
+        outline: 0;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.125s ease;
+    }
+    
+    .btn-bars i {
+        color: #28392f;
+    }
+    
+    
+    .btn-open {
+    
+    }
+    
+    .btn-close {
+        
+    }
 }
 
 /* HEADER NAV */
 
-.l-header {
-    position: relative;
+.nav {
+    width: 100%;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    visibility: visible;
+    transition: all 0.325s ease-out;
 }
 
-.btn-bars {
-    position: absolute;
-    right: 20px;
-    top: 40px;
-    margin: 0;
-    outline: 0;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.btn-open {
-
-}
-
-.btn-close {
-    
+@media screen and (max-width:400px) {
+    .wrap {
+        height: 0;
+        visibility: hidden;
+        transition: height 0.325s ease-in-out;
+    }
 }
 
 .nav ul {
@@ -96,9 +122,18 @@ body {
 }
 
 .l-header hr {
+    margin: 0;
     color: var(--primary-color);
 }
 
+
+
+/* MAIN */
+
+.l-main {
+    padding: 2rem 0;
+    box-sizing: border-box;
+}
 
 .container {
     display: flex;
@@ -116,17 +151,16 @@ body {
     width: 322px;
     height: 50px;
 
-    border: none;
     outline: none;
 
     text-align: center;
-    color: var(--white-color);
-    background: var(--primary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     border-radius: 10px;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -144,8 +178,14 @@ body {
     border-radius: 5px;
     text-align: center;
     padding: 0.4rem;
-    color: var(--white-color);
+    color: var(--primary-color);
+    font-size: 1rem;
+    letter-spacing: 2px;
 
+}
+
+.input::placeholder {
+    color: var(--primary-color);
 }
    
 .input-container button {
@@ -154,41 +194,46 @@ body {
     outline: none;
     cursor: pointer;
 
-    color: var(--white-color);
+    color: var(--primary-color);
 }
+
 
 .input-container button i {
     font-size: 1.2rem;
 }
 
+/* BOTÃO DE COPIAR */
 .btn-copy {
-    position: absolute;
-    width: 30px;
-    height: 28px;
-    left: 12px;
-    top: 12px;
+    opacity: 0.5;
 }
 
-.btn-rotate-right {
-    position: absolute;
-    width: 30px;
-    height: 28px;
-    right: 12px;
-    top: 12px;
-    
+.btn-copy:hover {
+    opacity: 0.9;
 }
 
-.btn-rotate-right i {
-    transition: transform 0.3s ease-out;
+i { 
+    color: #28392f;
 }
 
-.btn-copy:active i{
-    transform: scale(0.90);
-    transition: transform 0.325s ease-in-out 0.2s;
+@media screen and (max-width:400px) {
+    .btn-copy {
+        opacity: 0.9;
+    }
 }
 
-.btn-rotate-right:active i {
-    transform: rotate(360deg);   
+.fa-rotate-right {
+    /* transform: rotate(-1eg); */
+    transition: all 2s;
+}
+
+/* BOTÃO DE REFRESH */
+.fa-rotate-right:active {
+
+        -webkit-transform: rotateZ(-720deg);
+        -ms-transform: rotateZ(-720deg);
+        transform: rotateZ(-720deg);
+
+        transition: all 0.325s ease;
 }
 
 .text-container {
@@ -202,7 +247,9 @@ body {
 }
 
 .visibility {
-    visibility: hidden;
+    display: none;
+    transform: scale(0);
+    transition: all 0.325s ease;
 }
 
 .input-container-sm {
@@ -294,7 +341,7 @@ body {
     position: fixed;
     bottom: 41px;
     left: 22px;
-    width: 100%;
+    width: auto;
     height: 20px;
 }
 
