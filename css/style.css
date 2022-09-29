@@ -39,12 +39,18 @@ body {
     /* position: relative; */
 }
 
-.logo-container svg {
-    width: 50px;
-    height: 44px;
-    margin: 0 1rem;
-    fill: var(--primary-color);
+.svg-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0 0.5rem;
 }
+svg {
+    fill: var(--primary-color);
+    opacity: 0.8;
+}
+
+
 
 .btn-bars {
     display: none;
@@ -131,10 +137,55 @@ body {
 /* MAIN */
 
 .l-main {
-    padding: 2rem 0;
+
     box-sizing: border-box;
 }
 
+section {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100Vh;
+    margin: 0;
+}
+
+.section-sobre {
+    width: 100%;
+    height: auto;
+    margin: 0 0 3rem 0;
+    line-height: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: url(https://images.unsplash.com/photo-1624969862644-791f3dc98927?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-size: cover;
+
+    overflow: hidden;
+    background-position: top;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--white-color);
+}
+
+.section-sobre h2 {
+    padding: 2rem;
+    text-align: center;
+    color: var(--white-color);
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    line-height: 4rem;
+    font-size: 3rem;
+}
+
+.section-sobre p {
+    padding: 2rem 4rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: justify;
+}
+
+.section-app {
+    width: 100%;
+    height: 50vh;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -338,16 +389,19 @@ i {
 }
 
 .l-footer {
-    position: fixed;
-    bottom: 41px;
-    left: 22px;
-    width: auto;
-    height: 20px;
+    width: 100%;
+    height: 5rem;
+
+    display: flex;
+    align-items: center;
+    
+    background: var(--primary-color);
+    color: var(--white-color);
 }
 
 .l-footer p a {
     text-decoration: none;
-    color: var(--black-color);
+    color: var(--white-color);
     font-size: 0.8rem;
 }
 
